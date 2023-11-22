@@ -1,0 +1,468 @@
+@font-face {
+  font-family: "Signpainter";
+  src: url("HouseScript.ttf");
+}
+
+@font-face {
+  font-family: "Chalet";
+  src: url("Chalet.ttf");
+}
+
+body {
+  background-color: rgb(218, 177, 255);
+  overflow: hidden;
+  user-select: none;
+}
+
+.image {
+  width: 300px;
+}
+
+.reset-button {
+  display: block;
+  margin: auto;
+}
+
+.image:hover {
+  transform: scale(1.01);
+}
+.image:active {
+  transform: scale(0.98);
+}
+
+.value {
+  text-align: center;
+  font-size: 42px;
+  margin: 0;
+  font-family: "Signpainter";
+  color: purple;
+  text-shadow: -1px 1px blue;
+}
+
+.dps {
+  text-align: center;
+  font-size: 22px;
+  margin: 0;
+  margin-bottom: 8px;
+  font-family: "Signpainter";
+  color: blue;
+  text-shadow: -1px 1px purple;
+}
+
+.image {
+  display: block;
+  margin: auto;
+}
+
+.shop-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  /* margin: auto; */
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  margin-left: 8px;
+  margin-top: 8px;
+  background-color: rgb(118, 118, 255);
+  border-radius: 10px;
+  height: auto;
+  width: 300px;
+  padding: 10px;
+}
+
+.shopTitle,
+.settingsTitle,
+.achievementsTitle,
+.statsTitle {
+  text-align: center;
+  margin: 0;
+  font-family: "Signpainter";
+  font-size: 36px;
+  color: greenyellow;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.shopItem {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  background-color: rgb(72, 72, 255);
+  width: 300px;
+  border-radius: 10px;
+  transition: opacity 0.2s;
+  cursor: pointer;
+}
+
+.shopItem:hover {
+  opacity: 90%;
+}
+
+.shopItem:active {
+  transform: scale(0.98);
+}
+
+.shopItemTitle {
+  text-align: center;
+  margin: 0;
+  margin-top: 4px;
+  font-family: "Signpainter";
+  font-size: 28px;
+  color: white;
+}
+
+.shopItemPrice {
+  text-align: center;
+  margin: 0;
+  position: relative;
+  top: -10%;
+  font-family: "Signpainter";
+  font-size: 20px;
+  color: white;
+}
+
+.shopItemOwned {
+  text-align: center;
+  margin: 0;
+  position: relative;
+  top: -16%;
+  font-family: "Signpainter";
+  font-size: 20px;
+  color: rgb(213, 178, 255);
+}
+
+.achievements-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  position: absolute;
+  top: 0%;
+  right: 0;
+  margin-right: 8px;
+  margin-top: 8px;
+  background-color: rgb(118, 118, 255);
+  border-radius: 10px;
+  width: 400px;
+  padding: 10px;
+  transition: height 0.3s ease-in-out;
+}
+
+.achievement {
+  display: flex;
+  flex-direction: row;
+  height: auto;
+  background-color: rgb(72, 72, 255);
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  transition: opacity 0.2s;
+  z-index: 2;
+}
+
+.achievement-img {
+  width: 30px;
+  height: 30px;
+  margin: auto;
+}
+
+.achievement-title {
+  margin: 0;
+  margin-top: -8px;
+  font-size: 24px;
+  text-align: center;
+  font-family: "Chalet";
+  transition: opacity 0.2s ease, margin 0.4s ease;
+}
+
+.achievement-description {
+  margin: 0;
+  margin-top: -8px;
+  font-size: 18px;
+  text-align: center;
+  font-family: "Chalet";
+  transition: opacity 0.2s ease;
+}
+
+.flexRowAchievements {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.settings-container {
+  display: none;
+  flex-direction: column;
+  row-gap: 10px;
+  /* margin: auto; */
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  margin-bottom: 60px;
+  background-color: rgb(118, 118, 255);
+  border-radius: 10px;
+  height: fit-content;
+  width: 300px;
+  padding: 10px;
+  transition: right 0.6s ease;
+}
+
+.flexRowSettings {
+  display: flex;
+  flex-direction: row;
+}
+
+.settings-open-button {
+  width: 60px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  /* margin-left: -30px; */
+  cursor: pointer;
+}
+.settings-open-button:hover {
+  opacity: 0.8;
+}
+
+.reset-button {
+  color: rgb(0, 0, 0);
+  font-family: "Chalet";
+  font-size: 24px;
+  background-color: rgb(165, 165, 165);
+  border-color: #9f0000;
+  border-style: solid;
+  border-radius: 3px;
+}
+
+.reset-button:hover {
+  opacity: 0.9;
+}
+
+.export-button {
+  padding-left: 14px;
+  padding-right: 14px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  font-size: 24px;
+  border-radius: 3px;
+  border-width: 2px;
+  background-color: rgb(91, 125, 238);
+  border-color: rgb(27, 80, 129);
+  color: rgb(17, 7, 54);
+  border-style: solid;
+  margin: auto;
+  font-family: "Chalet";
+  margin-left: 10px;
+  transition: opacity 0.15s;
+}
+
+.import-button {
+  padding-left: 14px;
+  padding-right: 14px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  font-size: 24px;
+  border-radius: 3px;
+  border-width: 2px;
+  background-color: rgb(22, 212, 117);
+  border-color: rgb(28, 94, 62);
+  color: rgb(1, 19, 0);
+  margin: auto;
+  font-family: "Chalet";
+  border-style: solid;
+  transition: opacity 0.15s;
+}
+
+.import-button:hover,
+.export-button:hover {
+  opacity: 0.8;
+}
+
+.import-button:active,
+.export-button:active {
+  opacity: 0.6;
+}
+
+.exportBox {
+  width: 250px;
+  height: 80px;
+  border-style: solid;
+  background-color: rgb(91, 125, 238);
+  border-color: black;
+  margin: auto;
+  display: none;
+  resize: none;
+}
+
+.importBox {
+  width: 250px;
+  height: 80px;
+  border-style: solid;
+  background-color: rgb(22, 212, 117);
+  border-color: black;
+  margin: auto;
+  display: none;
+  position: relative;
+  text-align: start;
+  resize: none;
+}
+
+.import-load-button {
+  display: none;
+  margin: auto;
+  font-family: "Chalet";
+  font-size: 20px;
+  border-radius: 0;
+  background-color: rgb(22, 212, 117);
+  color: rgb(1, 19, 0);
+  border-color: black;
+  border-style: solid;
+  border-top: 0;
+}
+
+.import-load-button:hover {
+  background-color: rgb(25, 179, 102);
+}
+
+.achievement-unlocked {
+  position: absolute;
+  width: 290px;
+  bottom: -8%;
+  background-color: rgb(118, 118, 255);
+  border-radius: 10px;
+  transform: translate(-50%, 0);
+  left: 50%;
+  margin-bottom: 5px;
+  transition: bottom 0.5s;
+}
+
+.achievement-unlocked-header {
+  font-family: "Chalet";
+  font-size: 26px;
+  margin: 0;
+  width: 260px;
+  float: right;
+  text-align: center;
+}
+.achievement-unlocked-title {
+  font-family: "Chalet";
+  font-size: 18px;
+  margin: 0;
+  width: 260px;
+  float: right;
+  text-align: center;
+}
+.achievement-unlocked-description {
+  font-family: "Chalet";
+  font-size: 18px;
+  margin: 0;
+  text-align: center;
+}
+
+.achievement-unlocked-img {
+  display: flex;
+  flex-direction: row;
+  height: auto;
+  position: absolute;
+  /* background-color: rgb(72, 72, 255); */
+  width: 40px;
+  margin-top: 4px;
+  margin-left: 4px;
+  height: 40px;
+  border-radius: 10px;
+  transition: opacity 0.2s;
+  z-index: 2;
+}
+
+.stats-open-button {
+  width: 60px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin-left: 0px;
+  cursor: pointer;
+}
+.stats-open-button:hover {
+  opacity: 0.8;
+}
+
+.stats-container {
+  display: none;
+  row-gap: 10px;
+  margin: auto;
+  background-color: rgb(118, 118, 255);
+  border-radius: 10px;
+  height: 300px;
+  width: 300px;
+  padding: 10px;
+}
+
+.gen-sec {
+  margin: 0;
+  margin-top: -5px;
+  margin-bottom: -5px;
+  font-family: "Signpainter";
+  font-size: 24px;
+  text-align: center;
+  color: white;
+}
+.gen-overall {
+  position: relative;
+  margin-top: -5px;
+  margin-bottom: -7px;
+  font-family: "Signpainter";
+  font-size: 24px;
+  text-align: center;
+  color: white;
+}
+.achievementsProgress {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  margin-top: 10px;
+  margin-right: 15px;
+  /* color: white; */
+  font-family: "Calibri";
+}
+
+.loading {
+  display: block;
+  position: absolute;
+  background-color: rgb(218, 177, 255);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+}
+.loading-text {
+  text-align: Center;
+  font-size: 100px;
+}
+.social {
+  width: 25px;
+  /* background-color: rgb(72, 72, 255); */
+  /* padding: 5px; */
+  border-radius: 10px;
+  margin: 0;
+  margin-bottom: -6px;
+}
+
+.themes-title {
+  font-family: "Chalet";
+  font-size: 24px;
+  margin: 0;
+  color: black;
+  display: flex;
+  flex-direction: row;
+}
+
+.themeimg {
+  width: 30px;
+  cursor: pointer;
+  background-color: rgb(72, 72, 255);
+  border-radius: 10px;
+  margin-left: 10px;
+  cursor: no-drop;
+}

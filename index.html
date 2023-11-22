@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="loading" id="loading">
+      <p class="loading-text">Loading...</p>
+    </div>
+    <div class="don-container">
+      <p class="value" id="value">0 Dons</p>
+      <p class="dps" id="dps">0 Dons/second</p>
+      <img class="image" onclick="clickImg()" draggable="false" src="pog.PNG" id="image" />
+    </div>
+    <div class="shop-container" id="shop-container">
+      <p class="shopTitle">Shop</p>
+      <div class="shopItem" id="viewer" onclick="purchase('viewer')">
+        <p class="shopItemTitle">Viewer</p>
+        <p class="shopItemPrice" id="viewerPrice">Costs 0 Dons</p>
+        <p class="shopItemOwned" id="viewerOwned">0 owned</p>
+      </div>
+      <div class="shopItem" id="donation" onclick="purchase('donation')">
+        <p class="shopItemTitle">Donation</p>
+        <p class="shopItemPrice" id="donationPrice">Costs 0 Dons</p>
+        <p class="shopItemOwned" id="donationOwned">0 owned</p>
+      </div>
+      <div class="shopItem" id="sub" onclick="purchase('sub')">
+        <p class="shopItemTitle">Subscription</p>
+        <p class="shopItemPrice" id="subPrice">Costs 0 Dons</p>
+        <p class="shopItemOwned" id="subOwned">0 owned</p>
+      </div>
+      <div class="shopItem" id="mod" onclick="purchase('mod')">
+        <p class="shopItemTitle">Twitch Mod</p>
+        <p class="shopItemPrice" id="modPrice">Costs 0 Dons</p>
+        <p class="shopItemOwned" id="modOwned">0 owned</p>
+      </div>
+      <div class="shopItem" id="discMod" onclick="purchase('discMod')">
+        <p class="shopItemTitle">Discord Mod</p>
+        <p class="shopItemPrice" id="discModPrice">Costs 0 Dons</p>
+        <p class="shopItemOwned" id="discModOwned">0 owned</p>
+      </div>
+    </div>
+    <div class="achievements-container" id="achievementsContainer">
+      <p class="achievementsTitle">Achievements</p>
+      <p class="achievementsProgress" id="achievementsProgress">0/0</p>
+      <div class="flexRowAchievements" id="flexRowAchievements"></div>
+      <p class="achievement-title" id="achievementTitle"></p>
+      <p class="achievement-description" id="achievementDesc"></p>
+    </div>
+    <img src="Settings.png" class="settings-open-button" draggable="false" onclick="display('settings')" />
+    <div class="settings-container" id="settings">
+      <p class="settingsTitle">Settings</p>
+      <div class="flexRowSettings">
+        <button class="import-button" onclick="display('import')">Import</button>
+        <button class="export-button" onclick="display('export')">Export</button>
+      </div>
+      <div class="import-container">
+        <textarea type="text" class="importBox" id="importBox"></textarea>
+        <button class="import-load-button" id="importLoadButton" onclick="importPressed()">Import</button>
+      </div>
+      <textarea type="text" class="exportBox" id="exportBox"></textarea>
+      <button class="reset-button" id="resetButton" onclick="resetProgress()">Reset Progress</button>
+      <div class="themes">
+        <p class="themes-title" style="width: auto">
+          Themes:
+          <img src="./letterD.png" class="themeimg" id="theme0" onclick="(changeTheme(0))" />
+          <img src="./achievements/1.png" class="themeimg" id="theme1" onclick="(changeTheme(1))" />
+          <img src="./achievements/2.png" class="themeimg" id="theme2" onclick="(changeTheme(2))" />
+          <img src="./achievements/3.png" class="themeimg" id="theme3" onclick="(changeTheme(3))" />
+          <img src="./achievements/4.png" class="themeimg" id="theme4" onclick="(changeTheme(4))" />
+        </p>
+      </div>
+      <div class="socials">
+        <a href="https://twitch.com/jdongaming" target="_blank" style="width: 0"><img src="./twitch.png" class="social" /></a>
+        <a href="https://twitter.com/@jdongaming1" target="_blank" style="width: 0"><img src="./twitter.png" class="social" /></a>
+        <a href="https://youtube.com/@jdongaming" target="_blank" style="width: 0"><img src="./youtube.png" class="social" /></a>
+        <a href="https://instagram.com/jdongaming" target="_blank" style="width: 0"><img src="./instagram.png" class="social" /></a>
+        <a href="https://discord.com/invite/yZfVpzbhVP" target="_blank" style="width: 0"><img src="./discord.png" class="social" style="filter: brightness(100)" /></a>
+      </div>
+    </div>
+    <!-- <img src="Stats.png" class="stats-open-button" draggable="false" onclick="display('stats')" /> -->
+    <div class="stats-container" id="stats">
+      <p class="statsTitle">Stats</p>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
