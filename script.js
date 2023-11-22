@@ -308,7 +308,7 @@ for (i in items) {
 
 function dropJdon() {
   const newImage = document.createElement("img");
-  if (theme == 0) newImage.src = "pog.PNG";
+  if (theme == 0) newImage.src = "pog.png";
   if (theme == 1) newImage.src = "aki.png";
   newImage.setAttribute(
     "style",
